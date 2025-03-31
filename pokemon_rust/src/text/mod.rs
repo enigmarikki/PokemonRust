@@ -169,6 +169,8 @@ fn initialise_text_entity(
         "".to_string(),
         [1., 1., 1., 1.],
         30.,
+        LineMode::Single,
+        Anchor::TopLeft
     );
     ui_text.line_mode = LineMode::Wrap;
     ui_text.align = Anchor::TopLeft;

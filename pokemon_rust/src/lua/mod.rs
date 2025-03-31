@@ -1,7 +1,7 @@
 //! Integration with Lua through FFI. Contains Rust functions that can be
 //! called from Lua code and the required plumbing to make this communication
 //! work.
-
+use rlua::RluaCompat;
 mod events;
 mod npc;
 mod polymorphic_container;
@@ -242,12 +242,12 @@ where
                 rust_add_npc: add_npc(npc_key: usize)
             );
 
-            callback(&context)
+            Ok(callback(&context))
         })
     });
 
     let asset_tracker = execution_context.into_inner().asset_tracker;
     world.insert(asset_tracker);
 
-    result
+    result?
 }
