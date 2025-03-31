@@ -1,7 +1,7 @@
 use rand::{
-    distributions::{Distribution, Uniform},
     seq::SliceRandom,
     thread_rng,
+    distributions::{Uniform, Distribution}
 };
 
 use std::{any::Any, fmt::Debug};

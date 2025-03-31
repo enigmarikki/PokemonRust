@@ -2,7 +2,7 @@ use amethyst::{
     assets::Handle,
     ecs::Entity,
     renderer::{palette::Srgba, resources::Tint, SpriteRender, SpriteSheet},
-    ui::{Anchor, UiImage, UiText, UiTransform},
+    ui::{Anchor, UiImage, UiText, UiTransform, LineMode},
 };
 
 use crate::{
@@ -378,7 +378,7 @@ impl InfoCard {
 
         let content_width = Self::estimate_text_width(&content, font_size);
 
-        let mut ui_text = UiText::new(resources.font.clone(), content, [0., 0., 0., 1.], font_size);
+        let mut ui_text = UiText::new(resources.font.clone(), content, [0., 0., 0., 1.], font_size, LineMode::Single, Anchor::TopLeft);
         ui_text.align = Anchor::TopLeft;
 
         let ui_transform = UiTransform::new(

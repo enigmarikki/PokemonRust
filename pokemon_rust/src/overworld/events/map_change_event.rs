@@ -122,7 +122,7 @@ fn initialise_text_entity(
     ui_transforms: &mut WriteStorage<UiTransform>,
     resources: &CommonResources,
 ) -> Entity {
-    let mut ui_text = UiText::new(resources.font.clone(), text, [1., 1., 1., 1.], 30.);
+    let mut ui_text = UiText::new(resources.font.clone(), text, [1., 1., 1., 1.], 30., LineMode::Single,Anchor::TopLeft);
     ui_text.line_mode = LineMode::Wrap;
     ui_text.align = Anchor::Middle;
 

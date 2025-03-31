@@ -2,12 +2,13 @@
 name = "pokemon_rust"
 version = "0.1.0"
 authors = ["Ghabriel <ghabriel.nunes@gmail.com>"]
-edition = "2018"
+edition = "2021"
 
 [dependencies]
-amethyst = { version = "0.13", features = ["nightly", "sdl_controller", "vulkan"] }
+
+amethyst = { version = "0.15.3", features = ["sdl_controller", "vulkan"] }
 lazy_static = "1.4"
 rand = "0.7"
-rlua = "0.17"
-ron = "0.5"
-serde = "1.0"
+rlua = "0.20.1"
+ron = "0.9.0"
+serde = { version = "1.0", features = ["derive"] }
