@@ -28,19 +28,11 @@ pub mod pokemon;
 pub mod text;
 
 use amethyst::{
-    audio::AudioBundle,
-    core::transform::TransformBundle,
-    input::{InputBundle, StringBindings},
-    prelude::*,
-    renderer::{
+    audio::AudioBundle, core::transform::TransformBundle, input::{InputBundle, StringBindings}, prelude::*, renderer::{
         plugins::{RenderFlat2D, RenderToWindow},
         types::DefaultBackend,
         RenderingBundle,
-    },
-    start_logger as amethyst_start_logger,
-    ui::{RenderUi, UiBundle},
-    LoggerConfig,
-    Result as AmethystResult,
+    }, start_logger as amethyst_start_logger, ui::{RenderUi, UiBundle}, Logger, LoggerConfig, Result as AmethystResult
 };
 
 use crate::{config::GameConfig, loading_state::LoadingState};
@@ -64,8 +56,7 @@ pub fn start_game(params: PokemonRustParameters) -> AmethystResult<()> {
 
     amethyst_start_logger(LoggerConfig::default());
 
-    let game_config = GameConfig::load(game_config_path);
-
+    let game_config = GameConfig::load(game_config_path)?;
     let game_data = GameDataBuilder::default()
         .with_bundle(
             RenderingBundle::<DefaultBackend>::new()

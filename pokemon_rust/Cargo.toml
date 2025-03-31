@@ -6,7 +6,7 @@ edition = "2021"
 
 [dependencies]
 
-amethyst = { version = "0.15.3", features = ["sdl_controller", "vulkan"] }
+amethyst = { version = "0.15.3", features = [ "sdl_controller", "vulkan"] }
 lazy_static = "1.4"
 rand = "0.7"
 rlua = "0.20.1"
